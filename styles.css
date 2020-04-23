@@ -1,0 +1,406 @@
+body {
+    background: #f3f3f3;
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.intro{
+    text-align: left;
+    width:70%;
+    padding-left: 2%;
+}
+@media screen and (max-width: 640px){
+    .intro{
+        width: 80%;
+    }
+}
+
+
+.intro h1{
+    font-size: 75px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-shadow: 3px 3px rgb(0, 0, 0, 0.7);
+}
+@media screen and (max-width: 640px){
+    .intro h1 {
+        font-size: 50px;
+    }
+}
+.intro h2{
+    font-size:55px;
+    font-weight: bold;
+    margin-bottom:20px;
+    text-shadow: 3px 3px rgb(0, 0, 0, 0.7);
+}
+@media screen and (max-width: 640px){
+    .intro h2 {
+        font-size: 28px;
+    }
+}
+
+
+aside {
+    margin-top: 5%;
+}
+
+aside .button{
+    width: 25%;
+    padding: 30px 0;
+    color: #ffffff; 
+    transition-duration: 0.4s; 
+    font-weight: bold;
+}
+@media screen and (max-width: 640px){
+    .intro .button {
+        width: 50%;
+    }
+}
+aside .button:hover{
+    background-color: #ffffff;
+    color: #330955;
+    border: 2px solid #330955;
+}
+.clear {
+    clear: both; 
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+.hidden {
+    opacity: 0; 
+}
+.full-screen{
+    height:100vh}
+.position-relative{
+    position:relative!important
+}
+  
+  .button {
+    font-family: 'raleway', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    border: 2px solid #ffffff;
+    border-radius: 1.3rem;
+    display: block;
+    margin: 5% auto;
+    text-align: center;
+    text-decoration: none; }
+
+/*HEADER*/
+  header[role="banner"] {
+    background: rgb(0, 0, 0, 0.6);
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+    @media screen and (max-width: 768px) {
+      header[role="banner"] {
+        position: absolute; } }
+  
+  @media screen and (max-width: 768px) {
+    header[role="banner"] .page-wrap {
+      width: 100%; } }
+  
+    header {
+      width: 90%;
+      margin: auto;
+      overflow: hidden;
+  }
+  
+  .head {
+      color: #fff;
+      font-size: 1rem;
+      word-spacing: 0.5rem;
+      float: left;
+  }
+  
+  nav {
+      float: right;
+  }
+  @media screen and (max-width:767px) {
+      nav {
+          display: none;
+      }
+  }
+  
+  li {
+      display: inline;
+      padding-right: 1.7rem;
+  }
+  
+  li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: sans-serif;
+
+  }
+
+  header button {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: rgb(168, 3, 3);
+    padding: 0.5rem 1rem;
+    border-radius: 1.3rem;
+    border: none;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-y: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  /* Home */
+  #home {
+    width:100vw;
+    height: 100vh;
+    background: url('images/top-image.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 12.5em 0;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 767px) {
+      #home {
+          background: url('images/top-image-mobile.png') no-repeat center left fixed;
+          background-size: cover;
+      }
+  }
+
+  /* PORTFOLIO --------------------------------------------------------------------------------*/
+ #portfolio {
+     background:#ebebeb;
+     padding: 8.5em 0;
+     color: #000000;
+     text-align: center;   
+ }
+ .portfolio-header {
+     margin: 0 auto;
+     width:50%; 
+     background-color: #d24d57;
+ }
+ .portfolio-header h2 {
+     text-align: center;
+     font-weight: bold;
+     font-size: 35px;
+ }
+ .portfolio {
+    margin: 0 auto;
+    z-index: 1;
+    background: #fff;
+    padding: 7.5em 0;
+    border-bottom: 1px solid #f1f1f1; }
+    @media screen and (max-width: 1024px) {
+      .portfolio {
+        padding: 5em 0; } }
+    @media screen and (max-width: 640px) {
+      .portfolio {
+        padding: 3.125em 0; } 
+}
+.portfolio .info-container {
+        float: left;
+        width: 30%;
+        text-align: left; }
+        @media screen and (max-width: 640px){
+            .portfolio .info-container{
+                float: none;
+                width: 100%;
+            }
+        }
+
+
+.portfolio .info-container h3 {
+    font-size: 1.875em;
+    text-align: center;
+    font-weight: bold;
+    color: #3b3838;
+    margin-bottom: 0.83333em; }
+    @media screen and (min-width: 1600px) {
+     
+      .portfolio .info-container h3 {
+        text-align: left; } }
+  
+  .portfolio .info-container hr {
+    background-color: #c5c5c5;
+    width: 6%;
+    height: 0.0625em;
+    border: none;
+    margin-left: 47%;
+    margin-bottom: 1.5625em; }
+    @media screen and (max-width: 1024px) {
+     
+      .portfolio .info-container hr {
+        width: 10%;
+        margin-left: 45%; } }
+    @media screen and (min-width: 1600px) {
+     
+      .portfolio .info-container hr {
+        width: 30%;
+        margin: 1.875em 0; } }
+  
+ 
+  .portfolio .info-container p {
+    font-size: 1.3em;
+    width: 60%;
+    margin-left: 20%;
+    color: #706f6f;
+    text-align: center; }
+    @media screen and (max-width: 1024px) {
+      
+      .portfolio .info-container p {
+        width: 80%;
+        margin-left: 10%; } }
+    @media screen and (max-width: 768px) {
+      
+      .portfolio .info-container p {
+        width: 90%;
+        margin-left: 5%; } }
+    @media screen and (max-width: 640px) {
+     
+      .portfolio .info-container p {
+        font-size: 1.125em;
+        width: 100%;
+        margin-left: 0; } }
+    @media screen and (min-width: 1600px) {
+     
+      .portfolio .info-container p {
+        text-align: left;
+        width: 100%;
+        margin-left: 0; } }
+  
+  .portfolio .info-container a {
+    color: #cd3944;
+    text-decoration: none;
+
+    border-bottom: 2px solid #cd3944;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    
+    @media screen and (max-width: 480px){
+        .email figure img {
+            width:80%;
+        }
+    }
+      /* ABOUT --------------------------------------------------------------------------------*/
+ #about {
+    background:#ebebeb;
+    padding: 8.5em 0;
+    color: #000000;
+    text-align: center;   
+}
+.about-header {
+    margin: 0 auto;
+    width:50%; 
+    background-color: #d24d57;
+}
+.about-header h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+}
+#about-content {
+    background: #ffffff;
+}
+.about-desc { 
+    padding: 2% 0;
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 20px;
+}
+.laugh {
+    font-style: italic;
+    text-align: center;
+    padding: 0;
+}
+.body-link {
+    text-decoration: none;
+    font-family: "Permanent Marker";
+    color: #000000;
+}
+.contact-detail {
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
+.contact-email {
+    font-family: "Permanent Marker", "Georgia";
+    color: #000000;
+}
+.contact-email a {
+    text-decoration: none;
+    color: #000000;
+}
+.social {
+    width: 250px;
+    margin: 0 auto;
+}
+#social-links {
+    list-style-type: none;
+    display: block;
+}

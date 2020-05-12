@@ -54,6 +54,7 @@ aside .button{
     color: #ffffff; 
     transition-duration: 0.4s; 
     font-weight: bold;
+    font-size: 20px;
 }
 @media screen and (max-width: 640px){
     .intro .button {
@@ -61,9 +62,9 @@ aside .button{
     }
 }
 aside .button:hover{
-    background-color: #ffffff;
-    color: #330955;
-    border: 2px solid #330955;
+    background-color: rgb(255, 255, 0, 0.4);
+    color: #fff;
+    font-size: 25px;
 }
 .clear {
     clear: both; 
@@ -104,7 +105,7 @@ aside .button:hover{
     transition: all 0.15s ease-in-out; }
     @media screen and (max-width: 768px) {
       header[role="banner"] {
-        position: absolute; } }
+        position: fixed; } }
   
   @media screen and (max-width: 768px) {
     header[role="banner"] .page-wrap {
@@ -153,6 +154,22 @@ aside .button:hover{
     padding: 0.5rem 1rem;
     border-radius: 1.3rem;
     border: none;
+}
+
+@media screen and (min-width: 768px) {
+    #myNav {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) {
+    #myNav {
+        display: none;
+    }
 }
 
 /* The Overlay (background) */
@@ -215,6 +232,7 @@ aside .button:hover{
   #home {
     width:100vw;
     height: 100vh;
+    background-color: #000000;
     background: url('images/top-image.png') no-repeat center center fixed;
     background-size: cover;
     padding: 12.5em 0;
@@ -224,27 +242,60 @@ aside .button:hover{
   }
   @media screen and (max-width: 767px) {
       #home {
-          background: url('images/top-image-mobile.png') no-repeat center left fixed;
-          background-size: cover;
+        background: url('images/top-image-mobile.png') no-repeat center left fixed;
+        -webkit-background-size: 100%; 
+        -moz-background-size: 100%; 
+        -o-background-size: 100%; 
+        background-size: 100%; 
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
+      }
+  }
+  @media screen and (max-width: 560px) {
+      #home {
+        background: url('images/top-image-mobile560.png') no-repeat center fixed;
+        -webkit-background-size: 100%; 
+        -moz-background-size: 100%; 
+        -o-background-size: 100%; 
+        background-size: 100%; 
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
+      }
+  }
+  @media screen and (max-width: 480px) {
+      #home {
+        background: url('images/top-image-mobile480.png') no-repeat center fixed;
+        -webkit-background-size: 100%; 
+        -moz-background-size: 100%; 
+        -o-background-size: 100%; 
+        background-size: 100%; 
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
       }
   }
 
   /* PORTFOLIO --------------------------------------------------------------------------------*/
  #portfolio {
      background:#ebebeb;
-     padding: 8.5em 0;
-     color: #000000;
+     padding: 4.5em 0;
      text-align: center;   
  }
  .portfolio-header {
      margin: 0 auto;
-     width:50%; 
-     background-color: #d24d57;
+     width:70%;
+     height: 100px;
  }
  .portfolio-header h2 {
-     text-align: center;
-     font-weight: bold;
-     font-size: 35px;
+     text-align: left;
+     font-weight: 900;
+     font-size: 50px;
+     color: rgb(168, 3, 3);
  }
  .portfolio {
     margin: 0 auto;
@@ -262,7 +313,8 @@ aside .button:hover{
 .portfolio .info-container {
         float: left;
         width: 30%;
-        text-align: left; }
+        text-align: left;
+        padding: 10px; }
         @media screen and (max-width: 640px){
             .portfolio .info-container{
                 float: none;
@@ -330,7 +382,7 @@ aside .button:hover{
         width: 100%;
         margin-left: 0; } }
   
-  .portfolio .info-container a {
+  .portfolioBoxes .box a {
     color: #cd3944;
     text-decoration: none;
 
@@ -345,29 +397,102 @@ aside .button:hover{
             width:80%;
         }
     }
+
+
+    .portfolioBoxes{
+        width: 70%;
+        height: 40vh;
+        margin: 5% auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    @media screen and (max-width: 767px){
+        .portfolioBoxes{
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    .portfolioBoxes .box {
+        position: relative;
+        width: 300px;
+        height: 250px;
+        background: #ff0;
+        margin: 10px;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    
+    .portfolioBoxes .box .imgBox{
+        position: relative;
+        overflow: hidden;
+    }
+    .portfolioBoxes .box .imgBox img {
+        width: 100%;
+        height: 250px;
+        transition: transform 2s;
+    }
+    .portfolioBoxes .box:hover .imgBox img {
+        transition: scale(1.2);
+    }
+    .portfolioBoxes .box .details {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0,0,0, 0.8);
+        transform: scaleY(0);
+        transition: transform .5s;
+    }
+    .portfolioBoxes .box:hover .details {
+        transform: scaleY(1);
+        transform: scaleX(1);
+    }
+    .portfolioBoxes .box .details .content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        padding: 15px;
+        color: #fff;
+    }
+    .portfolioBoxes .box .details .content h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        color: #ff0;
+    }
+    .portfolioBoxes .box .details .content p {
+        margin: 10px 0 0;
+        padding: 0;
+    }
+
+
+
       /* ABOUT --------------------------------------------------------------------------------*/
  #about {
     background:#ebebeb;
-    padding: 8.5em 0;
-    color: #000000;
+    padding: 4.5em 0;
     text-align: center;   
 }
 .about-header {
     margin: 0 auto;
-    width:50%; 
-    background-color: #d24d57;
+    width:70%;
+    height: 100px;
 }
 .about-header h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 35px;
+    text-align: left;
+    font-weight: 900;
+    font-size: 50px;
+    color: rgb(168, 3, 3);
 }
 #about-content {
     background: #ffffff;
 }
 .about-desc { 
     padding: 2% 0;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     text-align: left;
     font-size: 20px;
@@ -383,10 +508,10 @@ aside .button:hover{
     color: #000000;
 }
 .contact-detail {
-    width: 250px;
+    width: 450px;
     margin: 0 auto;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 .contact-email {
     font-family: "Permanent Marker", "Georgia";
